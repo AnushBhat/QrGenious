@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           * {
+          box-sizing: border-box;
+          padding: 0;
+           margin: 0;
+}
+        body {
+            background-image: url("{{url_for('static',filename='images/signin.jpg')}}");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            backdrop-filter: blur(10px); /* Background blur */
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        form h2 {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <!-- Login form -->
+        <form method="POST" action="{{ url_for('login') }}">
+            <h2>Login</h2>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br>
+            <input type="submit" value="Login">
+            <p> do you want to create a Account <a href="{{url_for('signup')}}"> Register</a></p>
+            <br>
+            <p> Go to <a href="{{ url_for('index') }}"> index</a> page.</p>
+        </form>
+    </div>
+</body>
+</html>
+<!-- From Anush -->

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Generator</title>
+<style>
+    body {
+        background-image: url("{{url_for('static',filename='images/signin.jpg')}}");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        width: 300px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        text-align: center;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    button {
+        padding: 10px 20px;
+        background: #333;
+        color: #fff;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background: #555;
+    }
+
+    a {
+        color: #333;
+        text-decoration: none;
+    }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to QR Code Generator</h1>
+        <p>Generate QR codes for your needs.</p>
+        <form action="/generate_qr" method="post">
+            <input type="text" name="data" placeholder="Enter data for QR code">
+            <button type="submit">Generate QR Code</button>
+        </form>
+        <p>Already have an account? <a href="{{url_for('login')}}">Login</a></p>
+    </div>
+</body>
+</html>
